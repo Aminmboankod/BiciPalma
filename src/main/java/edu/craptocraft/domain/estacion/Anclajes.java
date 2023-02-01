@@ -17,6 +17,10 @@ public class Anclajes {
         return this.anclajes.length;
     }
 
+    @Override
+    public String toString() {
+        return "Numero de anclajes: "+ numAnclajes();
+    }
 
     
 }

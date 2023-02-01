@@ -1,5 +1,7 @@
 package edu.craptocraft.domain.estacion;
 
+import edu.craptocraft.domain.bicicleta.Bicicleta;
+
 public class Estacion {
     final int id;
     final String direccion;
@@ -51,6 +53,9 @@ public class Estacion {
     }
     return anclajesLibres;
 
+    }
+
+    public void anclarBicicleta(Bicicleta bicicleta) {
     }
 
 }

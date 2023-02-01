@@ -1,5 +1,8 @@
 package edu.craptocraft;
 
+import edu.craptocraft.domain.bicicleta.Bicicleta;
+import edu.craptocraft.domain.estacion.Estacion;
+
 public class BiciPalma {
     public static void main( String[] args ) {
 
@@ -24,5 +27,22 @@ public class BiciPalma {
 		System.out.println("anclajesLibres: " + estacion.anclajesLibres());
 
 		estacion.consultarAnclajes();
+/**
+		 * caso TEST anclar bicicleta(s) 
+		 */
+
+         System.out.println("\n **** caso TEST anclar bicicleta(s) **** \n");
+
+         int[] bicicletas = { 291, 292, 293, 294, 295, 296, 297 };
+         
+         Bicicleta bicicleta = null;
+         for (int id : bicicletas) {
+             bicicleta = new Bicicleta(id);
+             estacion.anclarBicicleta(bicicleta);
+         }
+ 
+         System.out.println("anclajes libres tras generar " + bicicletas.length 
+                             + " bicis: " + estacion.anclajesLibres());
+ 
 	}
 }

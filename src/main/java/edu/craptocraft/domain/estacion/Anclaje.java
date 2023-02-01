@@ -1,4 +1,5 @@
 package edu.craptocraft.domain.estacion;
+import edu.craptocraft.domain.bicicleta.Bicicleta;
 import edu.craptocraft.domain.bicicleta.Movil;
 
 public class Anclaje {
@@ -23,6 +24,9 @@ public class Anclaje {
     public void setOcupado(boolean ocupado) {
     }
 
+    public void anclarBici(Bicicleta bicicleta) {
+    }
+ 
 
 
 }

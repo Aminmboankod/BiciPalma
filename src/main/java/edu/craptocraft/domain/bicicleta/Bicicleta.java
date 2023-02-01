@@ -1,13 +1,14 @@
 package edu.craptocraft.domain.bicicleta;
 
-public class Bicicleta {
+public class Bicicleta implements Movil {
     private final Integer id;
 
     public Bicicleta(int id) {
         this.id = id;
     }
 
-    private int  getId(){
+    @Override
+    public int  getId(){
         return this.id;
     }
 

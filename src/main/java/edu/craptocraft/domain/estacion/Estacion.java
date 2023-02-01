@@ -1,6 +1,8 @@
 package edu.craptocraft.domain.estacion;
 
 import edu.craptocraft.domain.bicicleta.Bicicleta;
+import edu.craptocraft.domain.bicicleta.Movil;
+
 
 public class Estacion {
     final int id;

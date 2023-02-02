@@ -24,5 +24,9 @@ public class TarjetaUsuario implements Autenticacion{
     public String toString(){
         return "Tarjeta de usuario" + getId();
     }
+    @Override
+    public void setActivada(boolean estado) {
+        this.activada = estado;
+    }
 
 }

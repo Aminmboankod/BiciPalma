@@ -36,4 +36,21 @@ public class TarjetaUsuarioTest {
 		System.out.println("anclajes libres: " + estacion.anclajesLibres());
 
     }
+    @Test
+    public void desactivarTarjetaTest() {
+
+        System.out.println("\n **** caso TEST tarjeta inactiva **** \n");
+
+        Estacion estacion = new Estacion(1, "Manacor", 6);
+        TarjetaUsuario tarjetaUsuario = new TarjetaUsuario("000456789", true);
+
+        tarjetaUsuario.setActivada(false);
+
+        System.out.println("¿tarjeta de usuario activada? (true/false): "
+                + estacion.leerTarjetaUsuario(tarjetaUsuario));
+        assertEquals(false, estacion.leerTarjetaUsuario(tarjetaUsuario));
+        estacion.retirarBicicleta(tarjetaUsuario);
+
+        estacion.consultarAnclajes();
+    }
 }

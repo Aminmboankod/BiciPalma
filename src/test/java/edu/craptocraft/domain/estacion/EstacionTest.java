@@ -38,7 +38,7 @@ public class EstacionTest {
             estacion.anclarBicicleta(bicicleta);
         }
 
-        System.out.println("anclajes libres tras generar " + bicicletas.length 
+        System.getLogger("anclajes libres tras generar " + bicicletas.length 
                             + " bicis: " + estacion.anclajesLibres());
         assertEquals(0, estacion.anclajesLibres());
     }

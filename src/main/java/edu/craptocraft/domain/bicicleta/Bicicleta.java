@@ -17,4 +17,11 @@ public class Bicicleta implements Movil {
     public String  toString(){
         return "Bicicleta: " + getId();
     }
+
+    public boolean isOcupado() {
+        return false;
+    }
+
+    public void anclarBici(Movil bicicleta) {
+    }
 }

@@ -11,7 +11,7 @@ public class EstacionTest {
 
 
     @Test
-    public void EstadoEstacionTest() {
+    public void estadoEstacionTest() {
         Estacion estacion = new Estacion(1, "Manacor", 6);
         assertEquals("id: 1, direccion: Manacor, anclajes: 6", estacion.toString());
 
@@ -19,14 +19,17 @@ public class EstacionTest {
     }
 
     @Test
-    public void anclajesLibres() {
+    public void anclajesLibresTest() {
         Estacion estacion = new Estacion(1, "Manacor", 6);
         assertEquals(6, estacion.anclajesLibres());
+
+        Estacion estacion2 = new Estacion(1, "Manacor", 10);
+        assertEquals(10, estacion2.anclajesLibres());
     }
 
     @Test
     public void anclarBicicletaTest() {
-        Estacion estacion = new Estacion(1, "Manacor", 6);
+        Estacion estacion = new Estacion(2, "Palma", 7);
         int[] bicicletas = { 291, 292, 293, 294, 295, 296, 297 };
         
         Bicicleta bicicleta = null;
@@ -37,6 +40,7 @@ public class EstacionTest {
 
         System.out.println("anclajes libres tras generar " + bicicletas.length 
                             + " bicis: " + estacion.anclajesLibres());
+        assertEquals(0, estacion.anclajesLibres());
     }
 
 }

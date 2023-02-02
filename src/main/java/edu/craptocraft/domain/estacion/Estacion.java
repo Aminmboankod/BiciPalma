@@ -1,18 +1,20 @@
 package edu.craptocraft.domain.estacion;
 
+
 import edu.craptocraft.domain.bicicleta.Bicicleta;
-import edu.craptocraft.domain.bicicleta.Movil;
 
 
 public class Estacion {
     final int id;
     final String direccion;
-    private Anclajes anclajes;
+    final int numAnclajes;
+    final Bicicleta[] anclajes;
 
     public Estacion(int id, String direccion, int numAnclajes)  {
         this.id = id;
         this.direccion = direccion;
-        this.anclajes = new Anclajes(numAnclajes);
+        this.numAnclajes = numAnclajes;
+        this.anclajes = new Bicicleta[numAnclajes];
     }
 
     private int getId(){
@@ -23,32 +25,33 @@ public class Estacion {
         return this.direccion;
     }
 
-    private int numAnclajes() {
-        return this.anclajes.numAnclajes();
+    private int getNumAnclajes(){
+        return this.numAnclajes;
+    }
+
+    public Bicicleta[] getAnclajes() {
+        return this.anclajes;
     }
 
     @Override
     public String toString(){
-        return String.format("id: %d, direccion: %s, anclajes: %s", getId(), getDireccion(), numAnclajes());
+        return String.format("id: %d, direccion: %s, anclajes: %s", getId(), getDireccion(), getNumAnclajes());
     }
 
-    public Anclaje[] consultarAnclajes(){
-        return anclajes();
+    public Bicicleta[] consultarAnclajes(){
+        return getAnclajes();
     }
 
     public void consultarEstacion(){
         System.out.println(this);
     }
 
-    private Anclaje[] anclajes() {
-        return this.anclajes.getAnclajes();
-    }
 
     
      //Devuelve el número de anclajes que están libres
     public int anclajesLibres() {
         int anclajesLibres = 0;
-        for (Anclaje anclaje : anclajes()) {
+        for (Bicicleta anclaje : getAnclajes()) {
             if (anclaje == null) {
                 anclajesLibres += 1;
             }
@@ -58,6 +61,13 @@ public class Estacion {
     }
 
     public void anclarBicicleta(Bicicleta bicicleta) {
-    }
 
+        for (int i = 0; i < anclajes.length; i++) {
+            if (this.anclajes[i] == null) {
+                this.anclajes[i] = bicicleta;
+                break;
+            }
+        }
+    }
+        
 }
